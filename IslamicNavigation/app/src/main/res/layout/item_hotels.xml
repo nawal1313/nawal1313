@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/_16sdp"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:paddingStart="@dimen/_8sdp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivHotelPic"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="0dp"
+            android:src="@color/gray_400"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNumber"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toStartOf="@+id/tvRoute"
+            app:layout_constraintStart_toEndOf="@+id/ivHotelPic"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tvPlace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@+id/ivDelete"
+            app:layout_constraintStart_toEndOf="@+id/ivHotelPic"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            tools:text="Description" />
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@+id/ivHotelPic"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlace"
+            tools:text="123456" />
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/ic_call"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvNumber" />
+
+        <ImageView
+            android:id="@+id/tvRoute"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/ic_route"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

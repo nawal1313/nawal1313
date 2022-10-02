@@ -1,0 +1,184 @@
+package com.app.navi.fragments;
+
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+
+import com.app.navi.AllHotelsActivity;
+import com.app.navi.R;
+import com.app.navi.RestaurantsActivity;
+import com.app.navi.databinding.FragmentMakkahCityBinding;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class makkahFragment extends Fragment implements OnMapReadyCallback {
+
+    private FragmentMakkahCityBinding binding;
+    GoogleMap mMap;
+
+    LinearLayout hotels, retaurants;
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+        binding.hotellist.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), AllHotelsActivity.class);
+            startActivity(intent);
+        });
+
+        binding.restaurentlist.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), RestaurantsActivity.class);
+            startActivity(intent);
+        });
+    }
+
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+
+
+        binding = FragmentMakkahCityBinding.inflate(inflater, container, false);
+
+
+        return binding.getRoot();
+    }
+
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+
+        LatLng makkah = new LatLng(21.3891, 39.8579);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(makkah));
+
+        LatLng AlBaik = new LatLng(21.4133618, 39.7928552);
+        mMap.addMarker(new MarkerOptions().position(AlBaik).title("Al Baik").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng AlBaik1 = new LatLng(21.4351237, 39.8019529);
+        mMap.addMarker(new MarkerOptions().position(AlBaik1).title("Al Baik").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Talah = new LatLng(21.5465804, 39.1328561);
+        mMap.addMarker(new MarkerOptions().position(Talah).title("Talah For Dates").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Talah1 = new LatLng(21.541845, 39.1120234);
+        mMap.addMarker(new MarkerOptions().position(Talah1).title("Talah For Dates").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Charlotte = new LatLng(21.4219752, 39.7484913);
+        mMap.addMarker(new MarkerOptions().position(Charlotte).title("Charlotte").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Atyaf = new LatLng(21.4055634, 39.7676957);
+        mMap.addMarker(new MarkerOptions().position(Atyaf).title("Atyaf").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Baharat = new LatLng(21.5727607, 39.1113549);
+        mMap.addMarker(new MarkerOptions().position(Baharat).title("Baharat").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Narjese = new LatLng(21.419907, 39.8229673);
+        mMap.addMarker(new MarkerOptions().position(Narjese).title("Narjes Tea Lounge").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Mazaq = new LatLng(21.4869649, 39.9285748);
+        mMap.addMarker(new MarkerOptions().position(Mazaq).title("Mazaq").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Ajwaa = new LatLng(21.4867168, 39.7184036);
+        mMap.addMarker(new MarkerOptions().position(Ajwaa).title("Ajwaa").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant_mark)));
+
+        LatLng Hyatt = new LatLng(21.4206149, 39.8203111);
+        mMap.addMarker(new MarkerOptions().position(Hyatt).title("Hyatt Regency Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Raffles = new LatLng(21.419198, 39.8226063);
+        mMap.addMarker(new MarkerOptions().position(Raffles).title("Raffles Makkah Palace").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Dar = new LatLng(21.4186451, 39.8247371);
+        mMap.addMarker(new MarkerOptions().position(Dar).title("Dar Al Ghufran").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Hilton = new LatLng(21.4204507, 39.8217267);
+        mMap.addMarker(new MarkerOptions().position(Hilton).title("Makkah Hilton Towers").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Hajar = new LatLng(21.4185001, 39.8235715);
+        mMap.addMarker(new MarkerOptions().position(Hajar).title("Moevenpick Hotel & Residences Hajar Tower Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Swisstole = new LatLng(21.4180175, 39.8236142);
+        mMap.addMarker(new MarkerOptions().position(Swisstole).title("Swissotel Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng ZamZam = new LatLng(21.4191798, 39.8222308);
+        mMap.addMarker(new MarkerOptions().position(ZamZam).title("ZamZam Pullman Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Tawhid = new LatLng(21.4209732, 39.8206611);
+        mMap.addMarker(new MarkerOptions().position(Tawhid).title("InterContinental Dar Al Tawhid ").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Fairmont = new LatLng(21.4179663, 39.8230293);
+        mMap.addMarker(new MarkerOptions().position(Fairmont).title("Makkah Clock Royal Tower, A Fairmont Hotel").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Anjum = new LatLng(21.4243911, 39.8178216);
+        mMap.addMarker(new MarkerOptions().position(Anjum).title("Anjum Hotel Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Marriott = new LatLng(21.423697, 39.8168753);
+        mMap.addMarker(new MarkerOptions().position(Marriott).title("Makkah Marriott Hotel").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Kinda = new LatLng(21.4188082, 39.8221968);
+        mMap.addMarker(new MarkerOptions().position(Kinda).title("Elaf Kinda Hotel").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Rayhaan = new LatLng(21.4182178, 39.8226977);
+        mMap.addMarker(new MarkerOptions().position(Rayhaan).title("Al Marwa Rayhaan by Rotana-Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Eiman = new LatLng(21.4194985, 39.8242807);
+        mMap.addMarker(new MarkerOptions().position(Eiman).title("Royal Dar Al Eiman").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Meridien = new LatLng(21.4203081, 39.8269012);
+        mMap.addMarker(new MarkerOptions().position(Meridien).title("Le Meridien Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Orchid = new LatLng(21.4197578, 39.8241569);
+        mMap.addMarker(new MarkerOptions().position(Orchid).title("Al Safwah Royale Orchid").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Makarem = new LatLng(21.402561, 39.8286303);
+        mMap.addMarker(new MarkerOptions().position(Makarem).title("Makarem Umm Alqura Hotel").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Bakkah = new LatLng(21.4224473, 39.8467612);
+        mMap.addMarker(new MarkerOptions().position(Bakkah).title("Elaf Bakkah Hotel").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Shohada = new LatLng(21.4147966, 39.8257881);
+        mMap.addMarker(new MarkerOptions().position(Shohada).title("Hotel Al Shohada").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Drnef = new LatLng(21.3866761, 39.8221507);
+        mMap.addMarker(new MarkerOptions().position(Drnef).title("Drnef Hotel Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Almashaer = new LatLng(21.418114, 39.8265423);
+        mMap.addMarker(new MarkerOptions().position(Almashaer).title("Elaf Almashaer").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        LatLng Infinity = new LatLng(21.4132806, 39.8256862);
+        mMap.addMarker(new MarkerOptions().position(Infinity).title("Infinity Hotel Makkah").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sleep)));
+
+        try {
+            if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                return;
+            }
+            mMap.setMyLocationEnabled(true);
+            mMap.getUiSettings().setZoomControlsEnabled(true);
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+            mMap.isTrafficEnabled();
+            mMap.setBuildingsEnabled(true);
+        } catch (Exception ex) {
+
+        }
+    }
+}

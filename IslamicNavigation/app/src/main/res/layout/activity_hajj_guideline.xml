@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+
+    android:background="@drawable/blueback">
+
+
+        <WebView
+            android:id="@+id/hajjtext1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <WebView
+            android:id="@+id/hajjtext2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/list1"
+            android:layout_below="@id/hajjtext2"/>
+
+        <!--
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zill8"
+                android:id="@+id/zill1"
+                android:layout_below="@+id/hajjtext1"
+                android:layout_marginTop="10dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zill9"
+                android:id="@+id/zill2"
+                android:layout_below="@+id/zill1"
+                android:layout_marginTop="5dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zill10"
+                android:id="@+id/zill3"
+                android:layout_below="@+id/zill2"
+                android:layout_marginTop="5dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zill11"
+                android:id="@+id/zill4"
+                android:layout_below="@+id/zill3"
+                android:layout_marginTop="5dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zill12"
+                android:id="@+id/zill5"
+                android:layout_below="@+id/zill4"
+                android:layout_marginTop="5dp"/>
+                -->
+
+    </RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_map"
+            android:title="Map" />
+        <item
+            android:id="@+id/nav_macca_city"
+            android:icon="@drawable/ic_macca"
+            android:title="Macca City" />
+        <item
+            android:id="@+id/nav_hajj_schedule"
+            android:icon="@drawable/ic_schedule"
+            android:title="Hajj Schedule" />
+        <item
+            android:id="@+id/nav_safe_mode"
+            android:icon="@drawable/ic_safe"
+            android:title="Safe Mode" />
+    </group>
+</menu>

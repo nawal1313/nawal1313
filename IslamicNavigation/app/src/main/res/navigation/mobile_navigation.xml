@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.app.navi.fragments.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_macca_city"
+        android:name="com.app.navi.fragments.makkahFragment"
+        android:label="Makkah City"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_hajj_schedule"
+        android:name="com.app.navi.fragments.HajjScheduleFragment"
+        android:label="Hajj Schedule"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_safe_mode"
+        android:name="com.app.navi.fragments.SafeModeFragment"
+        android:label="Safe Mode"
+        tools:layout="@layout/fragment_safe_mode"/>
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.app.navi.fragments.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map"/>
+</navigation>
